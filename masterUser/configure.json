@@ -1,14 +1,14 @@
 [
     {
-        "attendee_id": "",
-        "first_name": "",
-        "last_name": "",
-        "attendee_type": "",
-        "badge_type": "",
-        "zip": "",
-        "country": "",
-        "city": "",
-        "registered": "",
-        "userImage_url": ""
+        "id": "attendee_id",
+        "firstName": "first_name",
+        "lastName": "last_name",
+        "attendeeType": "attendee_type",
+        "badgeType": "badge_type",
+        "zip": "zip",
+        "country": "country",
+        "city": "city",
+        "registered": "registered",
+        "fileURL": "userImage_url"
     }
 ]
