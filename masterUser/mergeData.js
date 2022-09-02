@@ -8,25 +8,21 @@ let secondaryObj = secondaryData.reduce((arr, value) => ({ ...arr, [value.attend
 
 
 for (let master of masterData) {
-    for (let secondary in secondaryObj) {       //This loop is looking for the key in object .       
-        if (master.id === secondary) {              // looking up a key in an object is O(1)
-            let ans = {}
-            ans[config[0].id] = master.id
-            ans[config[0].firstName] = master.firstName
-            ans[config[0].lastName] = master.lastName
-            ans[config[0].attendeeType] = master.attendeeType
-            ans[config[0].badgeType] = master.badgeType
-            ans[config[0].zip] = secondaryObj[secondary].zip
-            ans[config[0].country] = secondaryObj[secondary].country
-            ans[config[0].city] = secondaryObj[secondary].city
-            ans[config[0].registered] = secondaryObj[secondary].registered
-            ans[config[0].fileURL] = secondaryObj[secondary].files.length ? secondaryObj[secondary].files[secondaryObj[secondary].files.length - 1].fileURL : ""
-            result.push(ans);
-            break;
-        }
+    if (secondaryObj.hasOwnProperty(master.id)) {
+        let ans = {}
+        ans[config.id] = master.id
+        ans[config.firstName] = master.firstName
+        ans[config.lastName] = master.lastName
+        ans[config.attendeeType] = master.attendeeType
+        ans[config.badgeType] = master.badgeType
+        ans[config.zip] = secondaryObj[master.id].zip
+        ans[config.country] = secondaryObj[master.id].country
+        ans[config.city] = secondaryObj[master.id].city
+        ans[config.registered] = secondaryObj[master.id].registered
+        ans[config.fileURL] = secondaryObj[master.id].files.length ? secondaryObj[master.id].files[secondaryObj[master.id].files.length - 1].fileURL : ""
+        result.push(ans);
     }
 }
-
 
 console.log(result)
 
