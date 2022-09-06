@@ -1,7 +1,8 @@
 const json = require('./transcriptData.json');
 const data = json.results.items;
 
-let [phrases, sentances, result, sentance, phrase, sentStartTime, pharStartTime, phraseWords] = [[], [], [], "", "", 0, 0, 0]
+let [phrases, sentances, result, sentance, phrase,
+    sentStartTime, pharStartTime, phraseWords] = [[], [], [], "", "", 0, 0, 0]
 let flag = false;
 
 
@@ -35,7 +36,7 @@ for (let i = 0; i < data.length; i++) {
             phrases.push(temp);
             phrase = "";
             phraseWords = 0;
-            pharStartTime = i+1;
+            pharStartTime = i + 1;
         }
         if (flag) {
             let val = {
