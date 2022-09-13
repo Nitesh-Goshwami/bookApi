@@ -7,6 +7,8 @@ let flag = false;
 for (let i = 0; i < data.length; i++) {
     if (data[i].alternatives[0].content != "." && data[i].alternatives[0].content != "?") {
         sentance += data[i].alternatives[0].content + " ";
+
+        // Creating Phrases 
         if (data[i].alternatives[0].content == ",") {
             phraseWords--;
         }
@@ -28,6 +30,8 @@ for (let i = 0; i < data.length; i++) {
         phrase += data[i].alternatives[0].content + " ";
         phraseWords++;
     } else {
+
+        // Creating sentances 
         sentance += data[i].alternatives[0].content;
         let ans = {
             start_time: data[startTime].start_time,
